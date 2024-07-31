@@ -1,5 +1,3 @@
-// components/FormPage.js
-
 import PickupDetails from "../PickupDetails";
 import DropOffDetails from "../DropOffDetails";
 import DispatchDetails from "../DispatchDetails";

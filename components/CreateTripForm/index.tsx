@@ -1,5 +1,3 @@
-// components/CreateTripForm.js
-
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import TripDetails from "./TripDetails";
@@ -7,7 +5,6 @@ import CustomerDetails from "./CustomerDetails";
 import { useState } from "react";
 import FormPage from "./FormPage";
 
-// Define validation schema
 const validationSchema = Yup.object().shape({
   tripDetails: Yup.object().shape({
     date: Yup.date().required("Date is required"),
@@ -16,17 +13,23 @@ const validationSchema = Yup.object().shape({
       .oneOf(["CAD", "USD"], "Invalid currency")
       .required("Currency is required"),
     rate: Yup.number()
+      .typeError("Only numbers are allowed")
       .positive("Rate must be positive")
       .required("Rate is required"),
     delivered: Yup.boolean(),
   }),
   customer: Yup.object().shape({
     name: Yup.string().required("Customer name is required"),
-    phone: Yup.string().required("Customer phone is required"),
+    phone: Yup.number()
+      .typeError("Only numbers are allowed")
+      .max(10, "Max 10 digits")
+      .required("Customer phone is required"),
     address: Yup.string().required("Customer address is required"),
     address2: Yup.string(), // Optional field
     city: Yup.string().required("Customer city is required"),
-    postalCode: Yup.string().required("Customer postal code is required"),
+    postalCode: Yup.number()
+      .typeError("Only numbers are allowed")
+      .required("Customer postal code is required"),
   }),
   pickup: Yup.array().of(
     Yup.object().shape({
@@ -36,7 +39,9 @@ const validationSchema = Yup.object().shape({
       shipperPhone: Yup.string(),
       pickupAddress: Yup.string().required("Pickup address is required"),
       pickupCity: Yup.string().required("Pickup city is required"),
-      pickupPostalCode: Yup.string().required("Pickup postal code is required"),
+      pickupPostalCode: Yup.number()
+        .typeError("Only numbers are allowed")
+        .required("Pickup postal code is required"),
       pickupNumber: Yup.string(),
       contactPerson: Yup.string(),
     })
@@ -49,9 +54,9 @@ const validationSchema = Yup.object().shape({
       receiverPhone: Yup.string().required("Receiver phone is required"),
       dropOffAddress: Yup.string().required("Drop-off address is required"),
       dropOffCity: Yup.string().required("Drop-off city is required"),
-      dropOffPostalCode: Yup.string().required(
-        "Drop-off postal code is required"
-      ),
+      dropOffPostalCode: Yup.number()
+        .typeError("Only numbers are allowed")
+        .required("Drop-off postal code is required"),
     })
   ),
   dispatch: Yup.object().shape({
@@ -65,6 +70,7 @@ const validationSchema = Yup.object().shape({
       .oneOf(["CAD", "USD"], "Invalid currency")
       .required("Currency is required"),
     rate: Yup.number()
+      .typeError("Only numbers are allowed")
       .positive("Rate must be positive")
       .required("Rate is required"),
   }),

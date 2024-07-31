@@ -95,6 +95,7 @@ export default function DropOffDetails() {
                     />
                     <FormField
                       name={`dropOffs.${index}.dropOffPostalCode`}
+                      type="number"
                       label="Drop-Off Postal Code"
                     />
                   </div>
