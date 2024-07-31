@@ -113,16 +113,40 @@ export default function DispatchDetails() {
         </div>
       </div>
       <div className="flex flex-wrap items-center w-full gap-5">
-        <FormField name="dispatch.driver" label="Driver Name" />
-        <FormField name="dispatch.coDriver" label="Co-Driver Name" />
+        <FormField
+          name="dispatch.driver"
+          label="Driver Name"
+          classname="w-full md:basis-1/3"
+        />
+        <FormField
+          name="dispatch.coDriver"
+          label="Co-Driver Name"
+          classname="w-full md:basis-1/3"
+        />
       </div>
       <div className="flex flex-wrap items-center w-full gap-5">
-        <FormField name="dispatch.truckID" label="Truck ID" />
-        <FormField name="dispatch.trailerId" label="Trailer ID" />
+        <FormField
+          name="dispatch.truckID"
+          label="Truck ID"
+          classname="w-full md:basis-1/3"
+        />
+        <FormField
+          name="dispatch.trailerId"
+          label="Trailer ID"
+          classname="w-full md:basis-1/3"
+        />
       </div>
       <div className="flex flex-wrap items-center w-full gap-5">
-        <FormField name="dispatch.carrier" label="Carrier" />
-        <FormField name="dispatch.trailerType" label="Trailer Type" />
+        <FormField
+          name="dispatch.carrier"
+          label="Carrier"
+          classname="w-full md:basis-1/3"
+        />
+        <FormField
+          name="dispatch.trailerType"
+          label="Trailer Type"
+          classname="w-full md:basis-1/3"
+        />
         <CurrencyRateInput label="Rate" name="dispatch" />
       </div>
     </div>

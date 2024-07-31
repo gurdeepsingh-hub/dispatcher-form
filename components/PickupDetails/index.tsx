@@ -62,25 +62,25 @@ export default function PickupDetails() {
                       name={`pickups.${index}.appointmentDate`}
                       type="date"
                       label="Appointment Date"
-                      classname="basis-1/3"
+                      classname="w-full  md:basis-1/3"
                     />
                     <FormField
                       name={`pickups.${index}.appointmentTime`}
                       type="time"
                       label="Appointment Time"
-                      classname="basis-1/3"
+                      classname="w-full  md:basis-1/3"
                     />
                   </div>
                   <div className="flex flex-wrap items-center w-full gap-5">
                     <FormField
                       name={`pickups.${index}.shipperName`}
                       label="Shipper Name"
-                      classname="basis-1/3"
+                      classname="w-full md:basis-1/3"
                     />
                     <FormField
                       name={`pickups.${index}.shipperPhone`}
                       label="Shipper Phone"
-                      classname="basis-1/3"
+                      classname="w-full md:basis-1/3"
                     />
                   </div>
                   <FormField
@@ -92,24 +92,24 @@ export default function PickupDetails() {
                     <FormField
                       name={`pickups.${index}.pickupCity`}
                       label="Pickup City"
-                      classname="basis-1/3"
+                      classname="w-full md:basis-1/3"
                     />
                     <FormField
                       name={`pickups.${index}.pickupPostalCode`}
                       label="Pickup Postal Code"
-                      classname="basis-1/3"
+                      classname="w-full md:basis-1/3"
                     />
                   </div>
                   <div className="flex flex-wrap items-center w-full gap-5">
                     <FormField
                       name={`pickups.${index}.pickupNumber`}
                       label="Pickup Number"
-                      classname="basis-1/3"
+                      classname="w-full md:basis-1/3"
                     />
                     <FormField
                       name={`pickups.${index}.contactPerson`}
                       label="Contact Person"
-                      classname="basis-1/3"
+                      classname="w-full md:basis-1/3"
                     />
                   </div>
 
@@ -137,29 +137,29 @@ export default function PickupDetails() {
                           <FormField
                             name={`pickups.${index}.commodity`}
                             label="Commodity"
-                            classname="w-full"
+                            classname="w-full md:basis-1/3"
                           />
                           <FormField
                             name={`pickups.${index}.temperature`}
                             label="Temperature"
-                            classname="w-full"
+                            classname="w-full md:basis-1/3"
                           />
                           <FormField
                             name={`pickups.${index}.skids`}
                             label="Skids"
-                            classname="w-full"
+                            classname="w-full md:basis-1/3"
                           />
                         </div>
                         <div className="flex flex-wrap items-center w-full gap-5">
                           <FormField
                             name={`pickups.${index}.cases`}
                             label="Cases"
-                            classname="w-full"
+                            classname="w-full md:basis-1/3"
                           />
                           <FormField
                             name={`pickups.${index}.weights`}
                             label="Weights"
-                            classname="w-full"
+                            classname="w-full md:basis-1/3"
                           />
                         </div>
                       </div>
@@ -170,7 +170,7 @@ export default function PickupDetails() {
                 <div
                   key={index}
                   onClick={() => setExpanded(index)}
-                  className="flex items-center justify-between w-full gap-2 px-3 py-2 text-base border"
+                  className="flex flex-wrap items-center justify-between w-full gap-2 px-3 py-2 text-base border cursor-pointer"
                 >
                   <p>
                     {pickup.shipperName ? pickup.shipperName : "Reciver Name"}

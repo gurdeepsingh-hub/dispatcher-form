@@ -3,8 +3,9 @@ import CreateTripForm from "@/components/CreateTripForm";
 import "./globals.css";
 import { DiAtom } from "react-icons/di";
 import { usePathname, useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
 
-const links = [
+export const links = [
   { name: "Dashboard", url: "/dashboard" },
   { name: "Trips", url: "/" },
 ];
@@ -13,8 +14,9 @@ export default function Home() {
   const currentPath = usePathname();
 
   return (
-    <main className="flex w-screen h-screen overflow-hidden">
-      <div className="sidebar basis-[15%] bg-blue-600 px-3 py-5">
+    <main className="md:flex w-screen h-screen md:overflow-hidden">
+      <Navbar />
+      <div className="sidebar basis-[15%] bg-blue-600 px-3 py-5 hidden md:block">
         <a
           href="#"
           className="flex items-center gap-2 text-xl font-semibold text-white font"
@@ -36,7 +38,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className=" basis-[85%] overflow-auto">
+      <div className=" md:basis-[85%] overflow-auto">
         <CreateTripForm />
       </div>
     </main>

@@ -15,7 +15,7 @@ const FormField = ({
   classname?: string;
 }) => {
   return (
-    <div className="space-y-2">
+    <div className={`${classname} space-y-2`}>
       <label className="block">
         <span className="text-gray-700">{label}</span>
         <Field

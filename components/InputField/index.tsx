@@ -1,11 +1,11 @@
 // components/InputField.js
 import { useField } from "formik";
 
-export default function InputField({ label, ...props }: any) {
+export default function InputField({ className, label, ...props }: any) {
   const [field, meta] = useField(props);
 
   return (
-    <div className="col-span-1">
+    <div className={className}>
       <label className="block mb-1 text-sm font-medium">{label}</label>
       <input
         {...field}

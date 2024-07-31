@@ -65,21 +65,25 @@ export default function DropOffDetails() {
                     <FormField
                       name={`dropOffs.${index}.appointmentDate`}
                       type="date"
+                      classname="w-full md:basis-1/3"
                       label="Appointment Date"
                     />
                     <FormField
                       name={`dropOffs.${index}.appointmentTime`}
                       type="time"
+                      classname="w-full md:basis-1/3"
                       label="Appointment Time"
                     />
                   </div>
                   <div className="flex flex-wrap items-center w-full gap-5">
                     <FormField
                       name={`dropOffs.${index}.receiverName`}
+                      classname="w-full md:basis-1/3"
                       label="Receiver Name"
                     />
                     <FormField
                       name={`dropOffs.${index}.receiverPhone`}
+                      classname="w-full md:basis-1/3"
                       label="Receiver Phone"
                     />
                   </div>
@@ -92,23 +96,25 @@ export default function DropOffDetails() {
                     <FormField
                       name={`dropOffs.${index}.dropOffCity`}
                       label="Drop-Off City"
+                      classname="w-full md:basis-1/3"
                     />
                     <FormField
                       name={`dropOffs.${index}.dropOffPostalCode`}
                       type="number"
                       label="Drop-Off Postal Code"
+                      classname="w-full md:basis-1/3"
                     />
                   </div>
                   <div className="flex flex-wrap items-center w-full gap-5">
                     <FormField
                       name={`dropOffs.${index}.reference`}
                       label="Reference"
-                      classname="basis-1/3"
+                      classname="w-full md:basis-1/3"
                     />
                     <FormField
                       name={`dropOffs.${index}.contactPerson`}
                       label="Contact Person"
-                      classname="basis-1/3"
+                      classname="w-full md:basis-1/3"
                     />
                   </div>
                   {/* Advanced Settings Accordion */}
@@ -135,24 +141,24 @@ export default function DropOffDetails() {
                           <FormField
                             name={`dropOffs.${index}.commodity`}
                             label="Commodity"
-                            classname="w-full"
+                            classname="w-full md:basis-1/3"
                           />
                           <FormField
                             name={`dropOffs.${index}.skids`}
                             label="Skids"
-                            classname="w-full"
+                            classname="w-full md:basis-1/3"
                           />
                         </div>
                         <div className="flex flex-wrap items-center w-full gap-5">
                           <FormField
                             name={`dropOffs.${index}.cases`}
                             label="Cases"
-                            classname="w-full"
+                            classname="w-full md:basis-1/3"
                           />
                           <FormField
                             name={`dropOffs.${index}.weights`}
                             label="Weights"
-                            classname="w-full"
+                            classname="w-full md:basis-1/3"
                           />
                         </div>
                       </div>
@@ -163,7 +169,7 @@ export default function DropOffDetails() {
                 <div
                   key={index}
                   onClick={() => setExpanded(index)}
-                  className="flex items-center justify-between w-full gap-2 px-3 py-2 text-base border"
+                  className="flex items-center justify-between w-full gap-2 px-3 py-2 text-base border cursor-pointer"
                 >
                   <p>
                     {dropOff.shipperName ? dropOff.shipperName : "Reciver Name"}

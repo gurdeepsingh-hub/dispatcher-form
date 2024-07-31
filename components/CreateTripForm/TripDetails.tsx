@@ -25,11 +25,12 @@ export default function TripDetails() {
           Clear
         </button>
       </span>
-      <div className="grid items-center grid-cols-3 gap-4">
+      <div className="flex flex-wrap items-center w-full  mb-3 gap-4">
         <InputField
           label="Date *"
           name="tripDetails.date"
           type="date"
+          className={"w-full md:w-1/3"}
           required
           icon={<span className="mr-2">📅</span>}
         />
@@ -37,21 +38,22 @@ export default function TripDetails() {
           label="Order Number *"
           name="tripDetails.orderNumber"
           type="text"
+          className={"w-full md:w-1/3"}
           placeholder="Order Number"
           required
         />
         <CurrencyRateInput label="Rate *" name="tripDetails" />
-        <div className="flex items-center col-span-3">
-          <input
-            type="checkbox"
-            name="tripDetails.delivered"
-            id="isDelivered"
-            className="w-5 h-5 text-indigo-600 form-checkbox"
-          />
-          <label htmlFor="isDelivered" className="ml-2 text-sm font-medium">
-            Is this load already delivered?
-          </label>
-        </div>
+      </div>
+      <div className="flex items-center col-span-3">
+        <input
+          type="checkbox"
+          name="tripDetails.delivered"
+          id="isDelivered"
+          className="w-5 h-5 text-indigo-600 form-checkbox"
+        />
+        <label htmlFor="isDelivered" className="ml-2 text-sm font-medium">
+          Is this load already delivered?
+        </label>
       </div>
     </div>
   );

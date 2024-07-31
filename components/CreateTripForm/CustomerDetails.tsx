@@ -34,7 +34,7 @@ export default function CustomerDetails() {
           Clear
         </button>
       </span>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="col-span-1">
           <InputField
             label="Name"
@@ -55,7 +55,7 @@ export default function CustomerDetails() {
             field={phoneField}
           />
         </div>
-        <div className="col-span-2">
+        <div className="col-span-1 md:col-span-2">
           <InputField
             label="Address"
             name="customer.address"
@@ -65,7 +65,7 @@ export default function CustomerDetails() {
             field={addressField}
           />
         </div>
-        <div className="col-span-2">
+        <div className="col-span-1 md:col-span-2">
           <InputField
             label="Address 2 (Optional)"
             name="customer.address2"
