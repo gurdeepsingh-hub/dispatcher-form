@@ -5,7 +5,7 @@ import CurrencyRateInput from "../CurrencyRateInput";
 import { FaCircle, FaDotCircle, FaTruck } from "react-icons/fa";
 
 export default function DispatchDetails() {
-  const { setFieldValue, setFieldTouched, values } = useFormikContext();
+  const { setFieldValue, setFieldTouched, values } = useFormikContext<any>();
 
   const handleDispatchClear = () => {
     [

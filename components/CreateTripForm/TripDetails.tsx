@@ -1,20 +1,10 @@
 "use client";
-import { useField, useFormikContext } from "formik";
+import { useFormikContext } from "formik";
 import InputField from "../InputField";
-import { number } from "yup";
 import CurrencyRateInput from "../CurrencyRateInput";
 
 export default function TripDetails() {
   const { setFieldValue, setFieldTouched } = useFormikContext();
-  const [currencyField, currencyMeta, currencyHelpers] = useField(
-    "tripDetails.currency"
-  );
-  const [rateField, rateMeta] = useField("tripDetails.rate");
-
-  const handleCurrencyChange = (value: string) => {
-    // Use Formik's setValue helper to update the value correctly
-    currencyHelpers.setValue(value);
-  };
 
   const handleClear = () => {
     setFieldValue("tripDetails.date", "");

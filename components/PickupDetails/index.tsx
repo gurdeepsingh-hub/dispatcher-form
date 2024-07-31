@@ -4,7 +4,7 @@ import FormField from "../FormField";
 import { FaChevronDown, FaChevronUp, FaPlusCircle } from "react-icons/fa";
 
 export default function PickupDetails() {
-  const { setFieldValue, setFieldTouched, values } = useFormikContext();
+  const { setFieldValue, setFieldTouched, values } = useFormikContext<any>();
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [expanded, setExpanded] = useState(
     values && values.pickups ? values.pickups.length - 1 : 0
@@ -13,7 +13,7 @@ export default function PickupDetails() {
     setShowAdvanced((prev) => !prev);
   };
 
-  const handlePickupClear = (index) => {
+  const handlePickupClear = (index: number) => {
     [
       "appointmentDate",
       "appointmentTime",
@@ -41,7 +41,7 @@ export default function PickupDetails() {
         <div className="space-y-4">
           {values &&
             values.pickups &&
-            values.pickups.map((pickup, index) => {
+            values.pickups.map((pickup: any, index: number) => {
               return index === expanded ? (
                 <div key={index} className="p-5 mb-4 space-y-4 border">
                   <span className="flex justify-between">

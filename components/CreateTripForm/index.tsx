@@ -73,10 +73,10 @@ const validationSchema = Yup.object().shape({
 export default function CreateTripForm() {
   const [page, setPage] = useState(1);
 
-  const handlePageChange = (direction) => {
+  const handlePageChange = (direction: string) => {
     setPage((prevPage) => {
       if (direction === "next") return Math.min(prevPage + 1, 3);
-      if (direction === "prev") return Math.max(prevPage - 1, 1);
+      else return Math.max(prevPage - 1, 1);
     });
   };
 
@@ -157,7 +157,7 @@ export default function CreateTripForm() {
             <CustomerDetails />
             <FormPage page={page} values={values} />
 
-            <div className="flex justify-between mt-6">
+            <div className="relative flex justify-between mt-6">
               {page > 1 && (
                 <button
                   type="button"
@@ -167,11 +167,26 @@ export default function CreateTripForm() {
                   Previous
                 </button>
               )}
+              <div className="flex gap-2 mx-auto">
+                {[1, 2, 3].map((item) => (
+                  <p
+                    key={item}
+                    className={`${
+                      page === item
+                        ? "scale-150 underline text-blue-600"
+                        : "text-black"
+                    }`}
+                  >
+                    {item}
+                  </p>
+                ))}
+              </div>
+
               {page < 3 ? (
                 <button
                   type="button"
                   onClick={() => handlePageChange("next")}
-                  className="px-4 py-2 ml-auto text-white transition bg-indigo-600 rounded-md shadow hover:bg-indigo-700"
+                  className="px-4 py-2 text-white transition bg-indigo-600 rounded-md shadow hover:bg-indigo-700"
                 >
                   Next
                 </button>

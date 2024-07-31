@@ -5,7 +5,7 @@ import { FaChevronDown, FaChevronUp, FaPlusCircle } from "react-icons/fa";
 import { DiVim } from "react-icons/di";
 
 export default function DropOffDetails() {
-  const { setFieldValue, setFieldTouched, values } = useFormikContext();
+  const { setFieldValue, setFieldTouched, values } = useFormikContext<any>();
   const [showAdvanced, setShowAdvanced] = useState(false);
 
   const [expanded, setExpanded] = useState(
@@ -16,7 +16,7 @@ export default function DropOffDetails() {
     setShowAdvanced((prev) => !prev);
   };
 
-  const handleDropOffClear = (index) => {
+  const handleDropOffClear = (index: number) => {
     [
       "appointmentDate",
       "appointmentTime",
@@ -43,7 +43,7 @@ export default function DropOffDetails() {
         <div className="space-y-4">
           {values &&
             values.dropOffs &&
-            values.dropOffs.map((dropOff, index) => {
+            values.dropOffs.map((dropOff: any, index: number) => {
               return index === expanded ? (
                 <div key={index} className="p-5 mb-4 space-y-4 border">
                   <span className="flex justify-between">
