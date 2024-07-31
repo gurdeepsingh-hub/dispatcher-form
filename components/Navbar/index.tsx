@@ -1,4 +1,4 @@
-import { links } from "@/app/page";
+import { links } from "../../app/page";
 import React from "react";
 import { DiAtom } from "react-icons/di";
 
