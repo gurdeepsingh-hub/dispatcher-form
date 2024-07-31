@@ -22,7 +22,7 @@ const validationSchema = Yup.object().shape({
     name: Yup.string().required("Customer name is required"),
     phone: Yup.number()
       .typeError("Only numbers are allowed")
-      .max(10, "Max 10 digits")
+      .max(9999999999, "Max 10 digits")
       .required("Customer phone is required"),
     address: Yup.string().required("Customer address is required"),
     address2: Yup.string(), // Optional field
