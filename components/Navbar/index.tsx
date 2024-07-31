@@ -1,7 +1,9 @@
-import { links } from "../../app/page";
 import React from "react";
 import { DiAtom } from "react-icons/di";
-
+export const links = [
+  { name: "Dashboard", url: "/dashboard" },
+  { name: "Trips", url: "/" },
+];
 const Navbar = () => {
   return (
     <nav className="flex md:hidden w-full">

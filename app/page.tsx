@@ -3,12 +3,7 @@ import CreateTripForm from "@/components/CreateTripForm";
 import "./globals.css";
 import { DiAtom } from "react-icons/di";
 import { usePathname, useRouter } from "next/navigation";
-import Navbar from "@/components/Navbar";
-
-export const links = [
-  { name: "Dashboard", url: "/dashboard" },
-  { name: "Trips", url: "/" },
-];
+import Navbar, { links } from "../components/Navbar";
 
 export default function Home() {
   const currentPath = usePathname();
