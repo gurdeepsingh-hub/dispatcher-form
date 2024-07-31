@@ -153,8 +153,9 @@ export default function CreateTripForm() {
           },
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
+        onSubmit={(values, { resetForm }) => {
           console.log("Form submitted:", values);
+          resetForm();
         }}
       >
         {({ handleSubmit, values }) => (
